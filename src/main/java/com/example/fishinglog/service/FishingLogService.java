@@ -40,4 +40,8 @@ public class FishingLogService {
         }
         return null;
     }
+
+    public void deleteLog(Long id){
+        fishingLogRepository.deleteById(id);
+    }
 }
