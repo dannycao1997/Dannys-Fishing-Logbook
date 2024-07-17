@@ -11,20 +11,27 @@ const LogFormModal = ({ addLog }) => {
     });
 
     const handleClose = () => setShow(false);
+
     const handleShow = () => setShow(true);
 
     const handleChange = (e) => {
+
         setNewLog({
+
             ...newLog,
+
             [e.target.name]: e.target.value
         });
     };
 
     const handleSubmit = async (e) => {
+
         e.preventDefault();
 
         addLog(newLog);
+
         setNewLog({ fishSpecies: '', date: '', bait: '', location: '' });
+
         handleClose();
     };
 
@@ -33,6 +40,7 @@ const LogFormModal = ({ addLog }) => {
             <Button variant="primary" onClick={handleShow}>
 
                 Add Log
+
             </Button>
 
             <Modal show={show} onHide={handleClose}>
@@ -41,15 +49,19 @@ const LogFormModal = ({ addLog }) => {
 
 
                     <Modal.Title>Add Fishing Log</Modal.Title>
+
                 </Modal.Header>
 
                 <Modal.Body>
 
                     <Form onSubmit={handleSubmit}>
+
                         <Form.Group controlId="fishSpecies">
 
                             <Form.Label>Fish Species</Form.Label>
+
                             <Form.Control
+
                                 type="text"
                                 name="fishSpecies"
 
@@ -61,7 +73,9 @@ const LogFormModal = ({ addLog }) => {
                         </Form.Group>
 
                         <Form.Group controlId="date">
+
                             <Form.Label>Date</Form.Label>
+
                             <Form.Control
                                 type="date"
                                 name="date"
@@ -72,7 +86,9 @@ const LogFormModal = ({ addLog }) => {
                         </Form.Group>
 
                         <Form.Group controlId="bait">
+
                             <Form.Label>Bait</Form.Label>
+
                             <Form.Control
                                 type="text"
                                 name="bait"
@@ -83,7 +99,9 @@ const LogFormModal = ({ addLog }) => {
                             />
                         </Form.Group>
                         <Form.Group controlId="location">
+
                             <Form.Label>Location</Form.Label>
+
                             <Form.Control
                                 type="text"
                                 name="location"
@@ -93,6 +111,7 @@ const LogFormModal = ({ addLog }) => {
                                 required
                             />
                         </Form.Group>
+
                         <Button variant="primary" type="submit">
                             Add Log
                         </Button>
