@@ -20,6 +20,10 @@ public class FishingLog {
     private String bait;
     private LocalDate date;
 
+    private String imageUrl; // experimenting with new field for storing image url
+
+
+
 
 
 
