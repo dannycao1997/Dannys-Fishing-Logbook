@@ -1,10 +1,8 @@
-// Import necessary modules from React and Axios
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './FishingLog.css';
 
-// Define the FishingLog component
 const FishingLog = () => {
-    // Define state variables for storing logs and the new log details
     const [logs, setLogs] = useState([]);
     const [newLog, setNewLog] = useState({
         fishSpecies: '',
@@ -12,23 +10,22 @@ const FishingLog = () => {
         bait: '',
         location: ''
     });
+    const [error, setError] = useState('');
 
-    // Fetch logs from the backend API when the component mounts
     useEffect(() => {
         fetchLogs();
     }, []);
 
-    // Function to fetch logs from the backend API
     const fetchLogs = async () => {
         try {
             const response = await axios.get('http://localhost:8080/logs');
             setLogs(response.data);
         } catch (error) {
             console.error('Error fetching logs:', error);
+            setError('Error fetching logs.');
         }
     };
 
-    // Handle input changes for the new log form
     const handleChange = (e) => {
         setNewLog({
             ...newLog,
@@ -36,7 +33,6 @@ const FishingLog = () => {
         });
     };
 
-    // Handle form submission to create a new log
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -45,13 +41,14 @@ const FishingLog = () => {
             fetchLogs();
         } catch (error) {
             console.error('Error creating log:', error);
+            setError('Error creating log.');
         }
     };
 
-    // Render the component
     return (
-        <div>
-            <h1>Fishing Diary</h1>
+        <div className="fishing-log">
+            <h1>Fishing Log</h1>
+            {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -59,12 +56,14 @@ const FishingLog = () => {
                     value={newLog.fishSpecies}
                     onChange={handleChange}
                     placeholder="Fish Species"
+                    required
                 />
                 <input
                     type="date"
                     name="date"
                     value={newLog.date}
                     onChange={handleChange}
+                    required
                 />
                 <input
                     type="text"
@@ -72,6 +71,7 @@ const FishingLog = () => {
                     value={newLog.bait}
                     onChange={handleChange}
                     placeholder="Bait"
+                    required
                 />
                 <input
                     type="text"
@@ -79,11 +79,12 @@ const FishingLog = () => {
                     value={newLog.location}
                     onChange={handleChange}
                     placeholder="Location"
+                    required
                 />
                 <button type="submit">Add Log</button>
             </form>
             <ul>
-                {logs.map(log => (
+                {logs.map((log) => (
                     <li key={log.id}>
                         {log.fishSpecies} - {log.date} - {log.bait} - {log.location}
                     </li>
