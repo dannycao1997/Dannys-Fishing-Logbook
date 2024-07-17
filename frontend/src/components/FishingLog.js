@@ -47,7 +47,7 @@ const FishingLog = () => {
 
     return (
         <div className="fishing-log">
-            <h1>Fishing Log</h1>
+            <h1>FishBytes Logbook</h1>
             {error && <p className="error">{error}</p>}
             <form onSubmit={handleSubmit}>
                 <input
