@@ -45,3 +45,12 @@ public class FishingLogController {
 
     }
 }
+
+
+
+//public interface FishingLogService {
+//    List<FishingLog> getAllLogs();
+//    FishingLog getLogById(Long id);
+//    FishingLog createLog(FishingLog log);
+//    FishingLog updateLog(Long id, FishingLog logDetails);
+//    void deleteLog(Long id);
