@@ -16,9 +16,9 @@ public class FishingLog {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String fishSpecies;
-    private LocalDate date;
     private String location;
     private String bait;
+    private LocalDate date;
 
 
 
