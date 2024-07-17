@@ -29,7 +29,6 @@ public class FishingLogController {
     private final FishingLogService fishingLogService;
 
     public FishingLogController(FishingLogService fishingLogService) {
-
         this.fishingLogService = fishingLogService;
     }
 
@@ -43,7 +42,6 @@ public class FishingLogController {
     public ResponseEntity<FishingLog> getLogById(@PathVariable Long id) {
 
         Optional<FishingLog> log = fishingLogService.getLogById(id);
-
         return log.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -51,13 +49,9 @@ public class FishingLogController {
     public ResponseEntity<?> createLog(@RequestPart("log") FishingLog fishingLog, @RequestPart("file") MultipartFile file) {
 
         try {
-
             FishingLog savedLog = fishingLogService.createLog(fishingLog, file);
-
             return new ResponseEntity<>(savedLog, HttpStatus.CREATED);
-
         } catch (IOException ex) {
-
             return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -66,7 +60,6 @@ public class FishingLogController {
     public ResponseEntity<Void> deleteLog(@PathVariable Long id) {
 
         fishingLogService.deleteLog(id);
-
         return ResponseEntity.noContent().build();
     }
 
@@ -78,9 +71,7 @@ public class FishingLogController {
             byte[] image = Files.readAllBytes(filePath);
             HttpHeaders headers = new HttpHeaders();
             headers.add(HttpHeaders.CONTENT_TYPE, Files.probeContentType(filePath));
-
             return new ResponseEntity<>(image, headers, HttpStatus.OK);
-
         } catch (IOException ex) {
 
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

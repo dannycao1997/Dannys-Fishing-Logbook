@@ -143,7 +143,7 @@ const FishingLog = () => {
                             className="form-control mb-2"
                         />
                         <Button variant="primary" type="submit">
-                            Log catch
+                            Log a catch
                         </Button>
 
                     </form>

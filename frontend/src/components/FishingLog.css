@@ -1,16 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;700&display=swap');
 
 body {
-    background: linear-gradient(135deg, #cbe8ec, #0288d1);
-    font-family: 'Roboto', sans-serif;
-    color: #333;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    background: url('https://images.unsplash.com/photo-1493787039806-2edcbe808750?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') repeat;
+    background-size: cover;
+    animation: moveWater 300s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveWater {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
 }
 
 .fishing-log {
@@ -18,10 +39,12 @@ body {
     margin: 40px auto;
     padding: 30px;
     border-radius: 20px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid #0288d1;
+    border: 1px solid #2c160e;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .fishing-log:hover {
@@ -31,12 +54,18 @@ body {
 
 .fishing-log h1 {
     text-align: center;
-    color: #0288d1;
+    color: #103843;
     margin-bottom: 30px;
     font-family: 'Oswald', sans-serif;
     font-size: 72px;
     font-weight: 700;
     letter-spacing: 2px;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .list-group-item {
@@ -47,12 +76,11 @@ body {
     cursor: pointer;
     border: none;
     border-bottom: 1px solid #ffffff;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.44);
     font-size: 24px;
     padding: 15px 0;
     transition: background-color 0.3s ease, padding 0.3s ease;
-    line-height: .1; /* Adjust line height */
-
+    line-height: 1.5;
 }
 
 .list-group-item:hover {
@@ -64,7 +92,7 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-bottom: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -73,9 +101,13 @@ body {
     transform: scale(1.05);
 }
 
+.fish-details p {
+    margin: 5px 0;
+}
+
 button {
     margin-top: 20px;
-    background-color: #0288d1;
+    background-color: #103843;
     color: white;
     border: none;
     border-radius: 50px;
@@ -88,7 +120,7 @@ button {
 }
 
 button:hover {
-    background-color: #0277bd;
+    background-color: #e42121;
     transform: scale(1.05);
 }
 
@@ -105,22 +137,22 @@ button:hover {
 
 .form-control:focus {
     outline: none;
-    border-color: #0277bd;
+    border-color: #e42121;
     background-color: #e0f7fa;
 }
 
 .modal-content {
     border-radius: 20px;
-    border: 1px solid #0288d1;
+    border: 1px solid #ffffff;
     background: #f0faff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
 }
 
 .modal-header, .modal-footer {
-    background: #0288d1;
+    background: #ffffff;
     color: white;
-    border-bottom: 1px solid #0288d1;
+    border-bottom: 1px solid #ffffff;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     font-family: 'Montserrat', sans-serif;
@@ -170,7 +202,7 @@ button[type="submit"] {
     font-size: 20px;
     border-radius: 50px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    background-color: #0288d1;
+    background-color: #103843;
     color: white;
     border: none;
     cursor: pointer;
@@ -180,6 +212,6 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #0277bd;
+    background-color: #103843;
     transform: scale(1.05);
 }
