@@ -25,7 +25,7 @@ const FishingLog = () => {
     const fetchLogs = async () => {
 
         try {
-            const response = await axios.get('http://localhost:8080/logs');
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/logs`);
             setLogs(response.data);
         } catch (error) {
             console.error('Error fetching logs:', error);
@@ -59,7 +59,7 @@ const FishingLog = () => {
         formData.append('file', newLog.file);
 
         try {
-            await axios.post('http://localhost:8080/logs', formData, {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/logs`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -78,7 +78,7 @@ const FishingLog = () => {
     const handleDelete = async (id) => {
 
         try {
-            await axios.delete(`http://localhost:8080/logs/${id}`);
+            await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/logs${id}`);
 
             fetchLogs();
 
@@ -158,7 +158,7 @@ const FishingLog = () => {
 
                                 <p>{log.location} - {log.bait} - {log.date}</p>
 
-                                {log.imageUrl && <img src={`http://localhost:8080${log.imageUrl}`} alt="Catch" className="img-thumbnail" />}
+                                {log.imageUrl && <img src={`${process.env.REACT_APP_BACKEND_URL}${log.imageUrl}`} alt="Catch" className="img-thumbnail" />}
                                 <Button variant="danger" onClick={() => handleDelete(log.id)}>
                                     Delete
                                 </Button>
