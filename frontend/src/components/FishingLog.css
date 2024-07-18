@@ -16,7 +16,7 @@ body::before {
     left: 0;
     width: 180%;
     height: 180%;
-    background: url('/Users/Danny/Projects/demo/frontend/public/trout.png') repeat;
+    background: url('/Users/Danny/Projects/Dannys-Fishing-Logbook/frontend/public/trout.png') repeat;
     background-size: cover;
     animation: moveWater 500s linear infinite;
     z-index: -1;
