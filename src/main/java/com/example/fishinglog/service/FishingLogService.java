@@ -21,9 +21,6 @@ public class FishingLogService {
     @Autowired
     private FishingLogRepository fishingLogRepository;
 
-    // directory where uploaded files will be saved
-    private final String UPLOAD_DIR = "uploads/";
-
     // get all fishing logs
     public List<FishingLog> getAllLogs() {
         return fishingLogRepository.findAll();
@@ -42,6 +39,8 @@ public class FishingLogService {
     // save uploaded file and return its new file name
     private String saveFile(MultipartFile file) throws IOException {
         // makes the upload directory exists
+        // directory where uploaded files will be saved
+        String UPLOAD_DIR = "uploads/";
         Path uploadPath = Paths.get(UPLOAD_DIR);
         if (!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);
