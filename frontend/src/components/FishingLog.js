@@ -167,8 +167,12 @@ const FishingLog = () => {
                     </ul>
                 </Col>
             </Row>
+            <button className="github-button" onClick={() => window.open('https://github.com/dannycao1997/Dannys-Fishing-Logbook', '_blank')}>
+                GitHub
+            </button>
         </Container>
     );
+
 };
 
 export default FishingLog;

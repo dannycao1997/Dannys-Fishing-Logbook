@@ -63,17 +63,17 @@ public class FishingLogController {
         return ResponseEntity.noContent().build();
     }
 
+
     @GetMapping("/images/{filename:.+}")
     public ResponseEntity<byte[]> getImage(@PathVariable String filename) {
-
         Path filePath = Paths.get(uploadDir).resolve(filename).normalize();
         try {
             byte[] image = Files.readAllBytes(filePath);
             HttpHeaders headers = new HttpHeaders();
             headers.add(HttpHeaders.CONTENT_TYPE, Files.probeContentType(filePath));
+            headers.add("X-Content-Type-Options", "nosniff");
             return new ResponseEntity<>(image, headers, HttpStatus.OK);
         } catch (IOException ex) {
-
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }

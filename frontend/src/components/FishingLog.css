@@ -14,11 +14,11 @@ body::before {
     position: fixed;
     top: 0;
     left: 0;
-    width: 150%;
-    height: 150%;
-    background: url('https://images.unsplash.com/photo-1493787039806-2edcbe808750?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') repeat;
+    width: 180%;
+    height: 180%;
+    background: url('/Users/Danny/Projects/demo/frontend/public/trout.png') repeat;
     background-size: cover;
-    animation: moveWater 300s linear infinite;
+    animation: moveWater 500s linear infinite;
     z-index: -1;
 }
 
@@ -213,5 +213,28 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #103843;
+    transform: scale(1.05);
+}
+
+/* GitHub Button */
+.github-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 1000;
+}
+
+.github-button:hover {
+    background-color: #444;
     transform: scale(1.05);
 }
