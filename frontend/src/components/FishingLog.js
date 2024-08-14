@@ -25,7 +25,7 @@ const FishingLog = () => {
     const fetchLogs = async () => {
 
         try {
-            const response = await axios.get(`http://localhost:8080/logs`);
+            const response = await axios.get(`/logs`);
             setLogs(response.data);
         } catch (error) {
             console.error('Error fetching logs:', error);
@@ -49,42 +49,32 @@ const FishingLog = () => {
     };
 
     const handleSubmit = async (e) => {
-
         e.preventDefault();
 
         const formData = new FormData();
-
         formData.append('log', new Blob([JSON.stringify(newLog)], { type: 'application/json' }));
-
         formData.append('file', newLog.file);
 
         try {
-            await axios.post(`http://localhost:8080/logs`, formData, {
+            await axios.post(`/logs`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
             });
             setNewLog({ fishSpecies: '', date: '', bait: '', location: '', file: null });
-
             fetchLogs();
-
         } catch (error) {
             console.error('Error creating log:', error);
-
             setError('Error creating log.');
         }
     };
 
     const handleDelete = async (id) => {
-
         try {
-            await axios.delete(`http://localhost:8080/logs/${id}`);
-
+            await axios.delete(`/logs/${id}`);
             fetchLogs();
-
         } catch (error) {
             console.error('Error deleting log:', error);
-
             setError('Error deleting log.');
         }
     };
@@ -158,7 +148,7 @@ const FishingLog = () => {
 
                                 <p>{log.location} - {log.bait} - {log.date}</p>
 
-                                {log.imageUrl && <img src={`http://localhost:8080${log.imageUrl}`} alt="Catch" className="img-thumbnail" />}
+                                {log.imageUrl && <img src={`${log.imageUrl}`} alt="Catch" className="img-thumbnail" />}
                                 <Button variant="danger" onClick={() => handleDelete(log.id)}>
                                     Delete
                                 </Button>
