@@ -15,7 +15,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://frontend-fishing-5f99ebe2a958.herokuapp.com/")
+                        .allowedOrigins("https://frontend-fishing-5f99ebe2a958.herokuapp.com")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
