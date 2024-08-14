@@ -158,7 +158,7 @@ const FishingLog = () => {
 
                                 <p>{log.location} - {log.bait} - {log.date}</p>
 
-                                {log.imageUrl && <img src={`http://localhost:8080/${log.imageUrl}`} alt="Catch" className="img-thumbnail" />}
+                                {log.imageUrl && <img src={`http://localhost:8080${log.imageUrl}`} alt="Catch" className="img-thumbnail" />}
                                 <Button variant="danger" onClick={() => handleDelete(log.id)}>
                                     Delete
                                 </Button>
