@@ -35,7 +35,7 @@ body::before {
 }
 
 .fishing-log {
-    max-width: 700px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 30px;
     border-radius: 20px;
@@ -89,7 +89,7 @@ body::before {
 }
 
 .list-group-item img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
