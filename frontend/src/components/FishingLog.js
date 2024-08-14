@@ -56,7 +56,7 @@ const FishingLog = () => {
         formData.append('file', newLog.file);
 
         try {
-            await axios.post(`/logs`, formData, {
+            await axios.post('https://backend-fishing-255289de45ad.herokuapp.com/logs', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -71,7 +71,7 @@ const FishingLog = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`/logs/${id}`);
+            await axios.delete(`https://backend-fishing-255289de45ad.herokuapp.com/logs/${id}`);
             fetchLogs();
         } catch (error) {
             console.error('Error deleting log:', error);
