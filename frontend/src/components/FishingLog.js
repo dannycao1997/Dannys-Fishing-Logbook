@@ -25,7 +25,7 @@ const FishingLog = () => {
     const fetchLogs = async () => {
 
         try {
-            const response = await axios.get('/logs');
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/logs`);
             setLogs(response.data);
         } catch (error) {
             console.error('Error fetching logs:', error);
@@ -56,7 +56,7 @@ const FishingLog = () => {
         formData.append('file', newLog.file);
 
         try {
-            await axios.post('/logs', formData, {
+            await axios.post(`${process.env.REACT_APP_API_URL}/logs`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -71,7 +71,7 @@ const FishingLog = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`/logs/${id}`);
+            await axios.delete(`${process.env.REACT_APP_API_URL}/logs/${id}`);
             fetchLogs();
         } catch (error) {
             console.error('Error deleting log:', error);
