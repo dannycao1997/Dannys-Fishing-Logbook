@@ -89,7 +89,7 @@ body::before {
 }
 
 .list-group-item img {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
