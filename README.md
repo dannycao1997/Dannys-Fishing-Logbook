@@ -21,7 +21,7 @@ With this app, I can easily:
 - HTML & CSS: Markup and styling languages for structuring and designing the user interface.
 - Heroku: Cloud platform used for deploying and hosting the full-stack application.
 
-<img src="https://github.com/dannycao1997/Dannys-Fishing-Logbook/blob/73bc7ec7eb8a3e31e64c28c4748966f4b15a52a5/fishingappdemo%20(1).gif" width="600" height="400" />
+<img src="https://github.com/dannycao1997/Dannys-Fishing-Logbook/blob/52a9ca12538384f92854c6fccc3ebbd346a41e31/Danny%20Cao's%20Video%20-%20Oct%203%2C%202024.gif" />
 
 ### 🌐 Live App https://backend-fishing-255289de45ad.herokuapp.com/
 
