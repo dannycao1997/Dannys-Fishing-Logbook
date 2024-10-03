@@ -1,20 +1,28 @@
-# The Fisherman's Logbook 🎣
+# 🎣 The Fisherman's Logbook
+The Fisherman's Logbook is a project where I took my passion for fishing and turned it into a full-stack application. I wanted an easy way to track not just the fish I catch, but all the best moments from my time on the water with friends. Whether it’s reeling in a big one or just hanging out, this app lets me log everything that makes each fishing trip awesome
 
-## 🌐 Live Demo https://backend-fishing-255289de45ad.herokuapp.com/
+With this app, I can easily:
+
+- 🎣 Log the species of fish we catch
+- 📅 Record the date of each trip
+- 📍 Track the locations of our favorite fishing spots
+- 🪝 Note the bait that worked (or didn’t)
+- 🖼️ Upload pictures of our best catches
+
+#
+
+✨ Tech Stack 
+ 
+- Spring Boot: Backend framework for building scalable and efficient services.
+- React.js: Front-end library for creating dynamic, user-friendly interfaces.
+- Java: Backend programming language providing robust, object-oriented functionality.
+- JavaScript: Powers the front-end interactivity and logic.
+- PostgreSQL: Database for secure and efficient data management.
+- HTML & CSS: Markup and styling languages for structuring and designing the user interface.
+- Heroku: Cloud platform used for deploying and hosting the full-stack application.
 
 <img src="https://github.com/dannycao1997/Dannys-Fishing-Logbook/blob/73bc7ec7eb8a3e31e64c28c4748966f4b15a52a5/fishingappdemo%20(1).gif" width="600" height="400" />
 
-# 📖 Description
-A web application designed for fishing enthusiasts to log and track their fishing activities, enabling users to record catches, locations, dates, and more. The app provides a user-friendly experience with seamless data entry and activity tracking, enhancing user engagement for hobbyist and professional anglers alike.
+### 🌐 Live App https://backend-fishing-255289de45ad.herokuapp.com/
 
-Your go-to app for logging and keeping track of all your fishing adventures!
 
-# ✨ Tech Stack
-Fishing Logbook Web App is built using the following technologies:
-
-- Spring Boot: A Java-based framework for building scalable and efficient backend services.
-- React.js: A popular front-end JavaScript library for building dynamic user interfaces.
-- Java: A high-level, object-oriented programming language used for building robust backend systems.
-- JavaScript: A core web technology that powers the interactivity of the front-end.
-- PostgreSQL: An open-source relational database for storing and managing user data efficiently.
-- Heroku: A cloud platform that simplifies deployment and hosting of the application.
