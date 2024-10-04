@@ -1,4 +1,5 @@
-/* General Body Styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;700&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -6,10 +7,9 @@ body {
     color: #333;
     overflow-x: hidden;
     position: relative;
-    background-color: #e0f7fa; /* Soft light blue background */
+    background-color: #e0f7fa;
 }
 
-/* Background Water Animation */
 body::before {
     content: '';
     position: fixed;
@@ -19,8 +19,7 @@ body::before {
     height: 180%;
     background: url('/Users/Danny/Projects/Dannys-Fishing-Logbook/frontend/public/trout.png') repeat;
     background-size: cover;
-    animation: moveWater 180s linear infinite; /* Slowed down animation for tranquility */
-    z-index: -1;
+    animation: moveWater 180s linear infinite;
 }
 
 @keyframes moveWater {
@@ -35,9 +34,8 @@ body::before {
     }
 }
 
-/* Fishing Log Container */
 .fishing-log {
-    max-width: 900px; /* Adjusted for larger display */
+    max-width: 700px;
     margin: 40px auto;
     padding: 30px;
     border-radius: 20px;
@@ -65,59 +63,53 @@ body::before {
     letter-spacing: 2px;
 }
 
-/* Log List Styling - Changed to Collage/Grid Layout */
 .list-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusts based on screen size */
-    gap: 20px; /* Space between items */
-    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Individual item in the grid */
 .list-group-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     cursor: pointer;
+    border: none;
     background: rgba(255, 255, 255, 0.6);
     font-size: 22px;
     padding: 20px 0;
     transition: background-color 0.3s ease, padding 0.3s ease;
     line-height: 1.5;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover effect for list items */
 .list-group-item:hover {
-    background-color: #80deea; /* Light Cyan */
+    background-color: #80deea;
     padding: 25px 0;
 }
 
 /* Image Styling */
 .list-group-item img {
-    width: 100%; /* Ensures the image fits the grid */
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
 .list-group-item img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
 }
 
-/* Fish Details Styling */
 .fish-details p {
     margin: 5px 0;
 }
 
-/* Button Styling */
 button {
     margin-top: 20px;
-    background-color: #00796b; /* Bold Teal */
+    background-color: #00796b;
     color: white;
     border: none;
     border-radius: 50px;
@@ -131,7 +123,7 @@ button {
 }
 
 button:hover {
-    background-color: #004d40; /* Darker Teal */
+    background-color: #004d40;
     transform: scale(1.05);
 }
 
@@ -139,9 +131,9 @@ button:hover {
 .form-control {
     margin-bottom: 20px;
     padding: 15px;
-    border: 2px solid #0288d1; /* Thicker Border */
+    border: 2px solid #0288d1;
     border-radius: 10px;
-    background: #f1f8e9; /* Light Green background */
+    background: #f1f8e9;
     color: #333;
     font-size: 18px;
     transition: border-color 0.3s ease, background-color 0.3s ease;
@@ -149,8 +141,76 @@ button:hover {
 
 .form-control:focus {
     outline: none;
-    border-color: #00796b; /* Teal border on focus */
-    background-color: #e0f7fa; /* Soft blue background on focus */
+    border-color: #00796b;
+    background-color: #e0f7fa;
+}
+
+.modal-content {
+    border-radius: 20px;
+    background: #f0faff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.modal-header, .modal-footer {
+    background: #ffffff;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-body {
+    background: #e1f5fe;
+    font-size: 18px;
+}
+
+.modal-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.alert {
+    background-color: #ffcdd2; /* Soft Red */
+    color: #b71c1c; /* Dark Red */
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+button[type="submit"] {
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button[type="submit"]:hover {
+    background-color: #004d40;
+    transform: scale(1.05);
 }
 
 /* GitHub Button */
@@ -176,14 +236,10 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
     .fishing-log h1 {
         font-size: 48px;
-    }
-
-    .list-group {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust for smaller screens */
     }
 
     button[type="submit"] {
