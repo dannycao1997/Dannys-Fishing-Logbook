@@ -1,6 +1,3 @@
-/* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;700&display=swap');
-
 /* General Body Styling */
 body {
     margin: 0;
@@ -40,7 +37,7 @@ body::before {
 
 /* Fishing Log Container */
 .fishing-log {
-    max-width: 700px;
+    max-width: 900px; /* Adjusted for larger display */
     margin: 40px auto;
     padding: 30px;
     border-radius: 20px;
@@ -68,28 +65,31 @@ body::before {
     letter-spacing: 2px;
 }
 
-/* Log List Styling */
+/* Log List Styling - Changed to Collage/Grid Layout */
 .list-group {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusts based on screen size */
+    gap: 20px; /* Space between items */
+    margin: 20px 0;
 }
 
+/* Individual item in the grid */
 .list-group-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     cursor: pointer;
-    border: none;
     background: rgba(255, 255, 255, 0.6);
     font-size: 22px;
     padding: 20px 0;
     transition: background-color 0.3s ease, padding 0.3s ease;
     line-height: 1.5;
     border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Hover effect for list items */
 .list-group-item:hover {
     background-color: #80deea; /* Light Cyan */
     padding: 25px 0;
@@ -97,16 +97,16 @@ body::before {
 
 /* Image Styling */
 .list-group-item img {
-    max-width: 100%;
+    width: 100%; /* Ensures the image fits the grid */
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Consistent shadow */
     transition: transform 0.3s ease;
 }
 
 .list-group-item img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 /* Fish Details Styling */
@@ -153,77 +153,6 @@ button:hover {
     background-color: #e0f7fa; /* Soft blue background on focus */
 }
 
-/* Modal Content Styling */
-.modal-content {
-    border-radius: 20px;
-    background: #f0faff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.modal-header, .modal-footer {
-    background: #ffffff;
-    color: white;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.modal-body {
-    background: #e1f5fe;
-    font-size: 18px;
-}
-
-.modal-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 32px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Alert Styling */
-.alert {
-    background-color: #ffcdd2; /* Soft Red */
-    color: #b71c1c; /* Dark Red */
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* Form Group Styling */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Submit Button Styling */
-button[type="submit"] {
-    display: block;
-    width: 50%; /* Slightly wider for better interaction */
-    margin: 20px auto;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    background-color: #00796b;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-button[type="submit"]:hover {
-    background-color: #004d40;
-    transform: scale(1.05);
-}
-
 /* GitHub Button */
 .github-button {
     position: fixed;
@@ -251,6 +180,10 @@ button[type="submit"]:hover {
 @media (max-width: 768px) {
     .fishing-log h1 {
         font-size: 48px;
+    }
+
+    .list-group {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust for smaller screens */
     }
 
     button[type="submit"] {
