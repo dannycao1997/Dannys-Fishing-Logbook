@@ -1,5 +1,7 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;700&display=swap');
 
+/* General Body Styling */
 body {
     margin: 0;
     padding: 0;
@@ -7,9 +9,10 @@ body {
     color: #333;
     overflow-x: hidden;
     position: relative;
-    background-color: #e0f7fa;
+    background-color: #e0f7fa; /* Soft light blue background */
 }
 
+/* Background Water Animation */
 body::before {
     content: '';
     position: fixed;
@@ -19,7 +22,8 @@ body::before {
     height: 180%;
     background: url('/Users/Danny/Projects/Dannys-Fishing-Logbook/frontend/public/trout.png') repeat;
     background-size: cover;
-    animation: moveWater 180s linear infinite;
+    animation: moveWater 180s linear infinite; /* Slowed down animation for tranquility */
+    z-index: -1;
 }
 
 @keyframes moveWater {
@@ -34,6 +38,7 @@ body::before {
     }
 }
 
+/* Fishing Log Container */
 .fishing-log {
     max-width: 700px;
     margin: 40px auto;
@@ -63,6 +68,7 @@ body::before {
     letter-spacing: 2px;
 }
 
+/* Log List Styling */
 .list-group {
     display: flex;
     flex-direction: column;
@@ -85,7 +91,7 @@ body::before {
 }
 
 .list-group-item:hover {
-    background-color: #80deea;
+    background-color: #80deea; /* Light Cyan */
     padding: 25px 0;
 }
 
@@ -103,13 +109,15 @@ body::before {
     transform: scale(1.05);
 }
 
+/* Fish Details Styling */
 .fish-details p {
     margin: 5px 0;
 }
 
+/* Button Styling */
 button {
     margin-top: 20px;
-    background-color: #00796b;
+    background-color: #00796b; /* Bold Teal */
     color: white;
     border: none;
     border-radius: 50px;
@@ -123,7 +131,7 @@ button {
 }
 
 button:hover {
-    background-color: #004d40;
+    background-color: #004d40; /* Darker Teal */
     transform: scale(1.05);
 }
 
@@ -131,9 +139,9 @@ button:hover {
 .form-control {
     margin-bottom: 20px;
     padding: 15px;
-    border: 2px solid #0288d1;
+    border: 2px solid #0288d1; /* Thicker Border */
     border-radius: 10px;
-    background: #f1f8e9;
+    background: #f1f8e9; /* Light Green background */
     color: #333;
     font-size: 18px;
     transition: border-color 0.3s ease, background-color 0.3s ease;
@@ -141,10 +149,11 @@ button:hover {
 
 .form-control:focus {
     outline: none;
-    border-color: #00796b;
-    background-color: #e0f7fa;
+    border-color: #00796b; /* Teal border on focus */
+    background-color: #e0f7fa; /* Soft blue background on focus */
 }
 
+/* Modal Content Styling */
 .modal-content {
     border-radius: 20px;
     background: #f0faff;
@@ -172,6 +181,7 @@ button:hover {
     text-transform: uppercase;
 }
 
+/* Alert Styling */
 .alert {
     background-color: #ffcdd2; /* Soft Red */
     color: #b71c1c; /* Dark Red */
@@ -184,16 +194,17 @@ button:hover {
     letter-spacing: 1px;
 }
 
+/* Form Group Styling */
 .form-group {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-
+/* Submit Button Styling */
 button[type="submit"] {
     display: block;
-    width: 50%;
+    width: 50%; /* Slightly wider for better interaction */
     margin: 20px auto;
     padding: 15px;
     font-size: 20px;
@@ -236,7 +247,7 @@ button[type="submit"]:hover {
     transform: scale(1.05);
 }
 
-
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .fishing-log h1 {
         font-size: 48px;
