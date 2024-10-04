@@ -1,5 +1,7 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;700&display=swap');
 
+/* General Body Styling */
 body {
     margin: 0;
     padding: 0;
@@ -7,8 +9,10 @@ body {
     color: #333;
     overflow-x: hidden;
     position: relative;
+    background-color: #e0f7fa; /* Soft light blue background */
 }
 
+/* Background Water Animation */
 body::before {
     content: '';
     position: fixed;
@@ -18,7 +22,7 @@ body::before {
     height: 180%;
     background: url('/Users/Danny/Projects/Dannys-Fishing-Logbook/frontend/public/trout.png') repeat;
     background-size: cover;
-    animation: moveWater 500s linear infinite;
+    animation: moveWater 180s linear infinite; /* Slowed down animation for tranquility */
     z-index: -1;
 }
 
@@ -27,21 +31,22 @@ body::before {
         transform: translate(0, 0) scale(1);
     }
     50% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-30%, -30%) scale(1.02);
     }
     100% {
         transform: translate(0, 0) scale(1);
     }
 }
 
+/* Fishing Log Container */
 .fishing-log {
-    max-width: 900px;
+    max-width: 700px;
     margin: 40px auto;
     padding: 30px;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid #2c160e;
+    border: 1px solid #1b5e20; /* Dark green border */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 1;
@@ -52,16 +57,18 @@ body::before {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
+/* Headings Styling */
 .fishing-log h1 {
     text-align: center;
-    color: #103843;
+    color: #103843; /* Darker Blue-Green */
     margin-bottom: 30px;
     font-family: 'Oswald', sans-serif;
-    font-size: 72px;
+    font-size: 56px;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
+/* Log List Styling */
 .list-group {
     display: flex;
     flex-direction: column;
@@ -75,19 +82,20 @@ body::before {
     text-align: center;
     cursor: pointer;
     border: none;
-    border-bottom: 1px solid #ffffff;
-    background: rgba(255, 255, 255, 0.44);
-    font-size: 24px;
-    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.6);
+    font-size: 22px;
+    padding: 20px 0;
     transition: background-color 0.3s ease, padding 0.3s ease;
     line-height: 1.5;
+    border-radius: 12px;
 }
 
 .list-group-item:hover {
-    background-color: #b3e5fc;
-    padding: 20px 0;
+    background-color: #80deea; /* Light Cyan */
+    padding: 25px 0;
 }
 
+/* Image Styling */
 .list-group-item img {
     max-width: 100%;
     height: auto;
@@ -101,13 +109,15 @@ body::before {
     transform: scale(1.05);
 }
 
+/* Fish Details Styling */
 .fish-details p {
     margin: 5px 0;
 }
 
+/* Button Styling */
 button {
     margin-top: 20px;
-    background-color: #103843;
+    background-color: #00796b; /* Bold Teal */
     color: white;
     border: none;
     border-radius: 50px;
@@ -117,19 +127,21 @@ button {
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
 
 button:hover {
-    background-color: #e42121;
+    background-color: #004d40; /* Darker Teal */
     transform: scale(1.05);
 }
 
+/* Form Input Styling */
 .form-control {
     margin-bottom: 20px;
     padding: 15px;
-    border: 1px solid #0288d1;
+    border: 2px solid #0288d1; /* Thicker Border */
     border-radius: 10px;
-    background: #f1f8e9;
+    background: #f1f8e9; /* Light Green background */
     color: #333;
     font-size: 18px;
     transition: border-color 0.3s ease, background-color 0.3s ease;
@@ -137,13 +149,13 @@ button:hover {
 
 .form-control:focus {
     outline: none;
-    border-color: #e42121;
-    background-color: #e0f7fa;
+    border-color: #00796b; /* Teal border on focus */
+    background-color: #e0f7fa; /* Soft blue background on focus */
 }
 
+/* Modal Content Styling */
 .modal-content {
     border-radius: 20px;
-    border: 1px solid #ffffff;
     background: #f0faff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
@@ -152,16 +164,9 @@ button:hover {
 .modal-header, .modal-footer {
     background: #ffffff;
     color: white;
-    border-bottom: 1px solid #ffffff;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     font-family: 'Montserrat', sans-serif;
-}
-
-.modal-footer {
-    border-top: none;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 .modal-body {
@@ -176,9 +181,10 @@ button:hover {
     text-transform: uppercase;
 }
 
+/* Alert Styling */
 .alert {
-    background-color: #ffcdd2;
-    color: #b71c1c;
+    background-color: #ffcdd2; /* Soft Red */
+    color: #b71c1c; /* Dark Red */
     border: none;
     border-radius: 10px;
     padding: 15px;
@@ -188,21 +194,23 @@ button:hover {
     letter-spacing: 1px;
 }
 
+/* Form Group Styling */
 .form-group {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Submit Button Styling */
 button[type="submit"] {
     display: block;
-    width: 25%;
+    width: 50%; /* Slightly wider for better interaction */
     margin: 20px auto;
     padding: 15px;
     font-size: 20px;
     border-radius: 50px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    background-color: #103843;
+    background-color: #00796b;
     color: white;
     border: none;
     cursor: pointer;
@@ -212,7 +220,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #103843;
+    background-color: #004d40;
     transform: scale(1.05);
 }
 
@@ -237,4 +245,20 @@ button[type="submit"]:hover {
 .github-button:hover {
     background-color: #444;
     transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .fishing-log h1 {
+        font-size: 48px;
+    }
+
+    button[type="submit"] {
+        width: 70%;
+    }
+
+    .form-control {
+        font-size: 16px;
+        padding: 10px;
+    }
 }
