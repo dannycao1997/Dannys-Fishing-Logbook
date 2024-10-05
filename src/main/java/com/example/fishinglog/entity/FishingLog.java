@@ -22,9 +22,53 @@ public class FishingLog {
 
     private String imageUrl; // experimenting with new field for uploading/storing image url
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getFishSpecies() {
+        return fishSpecies;
+    }
 
+    public void setFishSpecies(String fishSpecies) {
+        this.fishSpecies = fishSpecies;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getBait() {
+        return bait;
+    }
+
+    public void setBait(String bait) {
+        this.bait = bait;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
 
 
