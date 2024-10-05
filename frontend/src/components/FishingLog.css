@@ -1,18 +1,18 @@
-/* Importing Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&family=Raleway:wght@400;700&family=Ubuntu:wght@400;700&family=Bebas+Neue&family=Nunito:wght@400;700&family=Archivo:wght@400;700&family=Rubik:wght@400;700&family=Exo+2:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
 
-/* General Body Styling */
+
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    color: #333;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
     overflow-x: hidden;
-    position: relative;
-    background-color: #e0f7fa; /* Soft light blue background */
+    background-color: #1e1e2f;
 }
 
-/* Background Water Animation */
+
 body::before {
     content: '';
     position: fixed;
@@ -22,7 +22,7 @@ body::before {
     height: 180%;
     background: url('/Users/Danny/Projects/Dannys-Fishing-Logbook/frontend/public/trout.png') repeat;
     background-size: cover;
-    animation: moveWater 180s linear infinite; /* Slowed down animation for tranquility */
+    animation: moveWater 180s linear infinite;
     z-index: -1;
 }
 
@@ -38,15 +38,15 @@ body::before {
     }
 }
 
-/* Fishing Log Container */
+
 .fishing-log {
-    max-width: 700px;
-    margin: 40px auto;
-    padding: 30px;
+    max-width: 100%;
+    margin: 20px 10px;
+    padding: 20px;
+    background: rgba(89, 91, 119, 0.58);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid #7bf8ed;
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid #1b5e20; /* Dark green border */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     z-index: 1;
@@ -54,21 +54,20 @@ body::before {
 
 .fishing-log:hover {
     transform: scale(1.02);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(125, 246, 221, 0.8);
 }
 
-/* Headings Styling */
+
 .fishing-log h1 {
     text-align: center;
-    color: #103843; /* Darker Blue-Green */
-    margin-bottom: 30px;
-    font-family: 'Oswald', sans-serif;
-    font-size: 56px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    color: #00ffcc;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 10px #00ffcc;
 }
 
-/* Log List Styling */
+
 .list-group {
     display: flex;
     flex-direction: column;
@@ -82,26 +81,27 @@ body::before {
     text-align: center;
     cursor: pointer;
     border: none;
-    background: rgba(255, 255, 255, 0.6);
-    font-size: 22px;
-    padding: 20px 0;
-    transition: background-color 0.3s ease, padding 0.3s ease;
-    line-height: 1.5;
+    background: rgba(46, 46, 79, 0.9); /* Retro dark background */
+    font-size: 16px;
+    padding: 15px;
+    transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
     border-radius: 12px;
+    border: 2px solid #00ffcc;
 }
 
 .list-group-item:hover {
-    background-color: #80deea; /* Light Cyan */
-    padding: 25px 0;
+    background-color: #2e2e4f;
+    padding: 18px;
+    transform: scale(1.05);
 }
 
-/* Image Styling */
+
 .list-group-item img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.5);
     transition: transform 0.3s ease;
 }
 
@@ -109,82 +109,80 @@ body::before {
     transform: scale(1.05);
 }
 
-/* Fish Details Styling */
+
 .fish-details p {
     margin: 5px 0;
+    color: #80deea;
+    font-size: 16px;
 }
 
-/* Button Styling */
+
 button {
-    margin-top: 20px;
-    background-color: #00796b; /* Bold Teal */
-    color: white;
+    background-color: #00ffcc;
+    color: #1e1e2f;
     border: none;
     border-radius: 50px;
-    padding: 15px 30px;
+    padding: 12px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 20px;
-    font-weight: bold;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
 }
 
 button:hover {
-    background-color: #004d40; /* Darker Teal */
-    transform: scale(1.05);
+    background-color: #7cf6cd;
+    transform: scale(1.1);
 }
 
-/* Form Input Styling */
+
 .form-control {
     margin-bottom: 20px;
-    padding: 15px;
-    border: 2px solid #0288d1; /* Thicker Border */
-    border-radius: 10px;
-    background: #f1f8e9; /* Light Green background */
-    color: #333;
-    font-size: 18px;
+    padding: 12px;
+    border: 2px solid #00ffcc;
+    border-radius: 8px;
+    background: #1e1e2f;
+    color: white;
+    font-size: 16px;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .form-control:focus {
     outline: none;
-    border-color: #00796b; /* Teal border on focus */
-    background-color: #e0f7fa; /* Soft blue background on focus */
+    border-color: #00ffaa;
+    background-color: #2e2e4f;
 }
 
-/* Modal Content Styling */
+
 .modal-content {
     border-radius: 20px;
-    background: #f0faff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    background: #2e2e4f;
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.8);
 }
 
 .modal-header, .modal-footer {
-    background: #ffffff;
+    background: #2e2e4f;
     color: white;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .modal-body {
-    background: #e1f5fe;
-    font-size: 18px;
+    background: #1e1e2f;
+    font-size: 16px;
 }
 
 .modal-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 32px;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    color: #00ffcc;
 }
 
-/* Alert Styling */
+
 .alert {
-    background-color: #ffcdd2; /* Soft Red */
-    color: #b71c1c; /* Dark Red */
+    background-color: #ffcdd2;
+    color: #b71c1c;
     border: none;
     border-radius: 10px;
     padding: 15px;
@@ -194,37 +192,27 @@ button:hover {
     letter-spacing: 1px;
 }
 
-/* Form Group Styling */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
-/* Submit Button Styling */
 button[type="submit"] {
     display: block;
-    width: 50%; /* Slightly wider for better interaction */
+    width: 100%;
     margin: 20px auto;
-    padding: 15px;
-    font-size: 20px;
+    padding: 12px;
+    font-size: 18px;
     border-radius: 50px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    background-color: #00796b;
-    color: white;
+    background-color: #00ffcc;
+    color: #1e1e2f;
     border: none;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
 }
 
 button[type="submit"]:hover {
-    background-color: #004d40;
+    background-color: #00ffaa;
     transform: scale(1.05);
 }
 
-/* GitHub Button */
+
 .github-button {
     position: fixed;
     bottom: 20px;
@@ -237,7 +225,6 @@ button[type="submit"]:hover {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     font-size: 16px;
-    font-weight: bold;
     text-transform: uppercase;
     z-index: 1000;
 }
@@ -247,66 +234,43 @@ button[type="submit"]:hover {
     transform: scale(1.05);
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
-    .fishing-log h1 {
-        font-size: 36px; /* Reduce heading size */
-    }
-
-    .fishing-log {
-        margin: 20px 10px; /* Reduce margins on smaller screens */
-        padding: 20px;
-    }
-
-    .list-group-item {
-        font-size: 18px; /* Adjust font size for better readability */
-        padding: 15px 0;
-    }
-
-    .list-group-item img {
-        width: 100%; /* Make images take full width */
-        height: auto;
-    }
-
-    button[type="submit"] {
-        width: 100%; /* Full-width buttons on mobile */
-        padding: 10px 20px;
-    }
-
-    button {
-        padding: 10px 20px; /* Smaller padding for buttons on mobile */
-        font-size: 18px;
-    }
-
-    .form-control {
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    .modal-title {
-        font-size: 24px;
-    }
-
-    .github-button {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
-
-    /* Adjust list items for better mobile alignment */
-    .list-group {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media (max-width: 600px) {
     .fishing-log h1 {
         font-size: 32px;
     }
 
+    .fishing-log {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .list-group-item {
+        font-size: 16px;
+    }
+
     button[type="submit"] {
+        width: 100%;
+    }
+
+    .form-control {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .fishing-log h1 {
+        font-size: 28px;
+    }
+
+    button {
         padding: 8px 16px;
+        font-size: 16px;
     }
 
     .form-control {
@@ -315,11 +279,11 @@ button[type="submit"]:hover {
     }
 
     .list-group-item {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .modal-title {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
 
@@ -329,4 +293,3 @@ button[type="submit"]:hover {
     justify-content: center;
     align-items: center;
 }
-

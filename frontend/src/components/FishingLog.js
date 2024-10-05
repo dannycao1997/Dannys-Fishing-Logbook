@@ -83,7 +83,7 @@ const FishingLog = () => {
         <Container className="fishing-log">
             <Row>
                 <Col>
-                    <h1 className="text-center">The Fisherman's Logbook</h1>
+                    <h1 className="text-center">Danny’s Fishing Journal</h1>
                     {error && <Alert variant="danger">{error}</Alert>}
 
                     <form onSubmit={handleSubmit} className="mb-4">
@@ -133,7 +133,7 @@ const FishingLog = () => {
                             className="form-control mb-2"
                         />
                         <Button variant="primary" type="submit">
-                            Log a catch
+                            Log Catch
                         </Button>
 
                     </form>
@@ -157,9 +157,7 @@ const FishingLog = () => {
                     </ul>
                 </Col>
             </Row>
-            <button className="github-button" onClick={() => window.open('https://github.com/dannycao1997/Dannys-Fishing-Logbook', '_blank')}>
-                GitHub
-            </button>
+
         </Container>
     );
 
