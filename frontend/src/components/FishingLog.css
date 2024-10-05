@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;700&family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Lato:wght@400;700&family=Raleway:wght@400;700&family=Ubuntu:wght@400;700&family=Bebas+Neue&family=Nunito:wght@400;700&family=Archivo:wght@400;700&family=Rubik:wght@400;700&family=Exo+2:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
 
-
-
+/* General Styling */
 body {
     margin: 0;
     padding: 0;
@@ -12,36 +10,23 @@ body {
     background-color: #1e1e2f;
 }
 
-
 body::before {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
-    width: 180%;
-    height: 180%;
+    width: 100%;
+    height: 100%;
     background: url('/Users/Danny/Projects/Dannys-Fishing-Logbook/frontend/public/trout.png') repeat;
     background-size: cover;
     animation: moveWater 180s linear infinite;
     z-index: -1;
 }
 
-@keyframes moveWater {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    50% {
-        transform: translate(-30%, -30%) scale(1.02);
-    }
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-}
-
-
+/* Fishing Log Container */
 .fishing-log {
-    max-width: 100%;
-    margin: 20px 10px;
+    max-width: 600px;
+    margin: 20px auto;
     padding: 20px;
     background: rgba(89, 91, 119, 0.58);
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
@@ -49,7 +34,6 @@ body::before {
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    z-index: 1;
 }
 
 .fishing-log:hover {
@@ -57,7 +41,7 @@ body::before {
     box-shadow: 0 15px 35px rgba(125, 246, 221, 0.8);
 }
 
-
+/* Headings Styling */
 .fishing-log h1 {
     text-align: center;
     color: #00ffcc;
@@ -67,11 +51,12 @@ body::before {
     text-shadow: 2px 2px 10px #00ffcc;
 }
 
-
+/* Log List Styling */
 .list-group {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 0;
 }
 
 .list-group-item {
@@ -80,13 +65,12 @@ body::before {
     align-items: center;
     text-align: center;
     cursor: pointer;
-    border: none;
-    background: rgba(46, 46, 79, 0.9); /* Retro dark background */
+    background: rgba(46, 46, 79, 0.9);
     font-size: 16px;
     padding: 15px;
-    transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
     border-radius: 12px;
     border: 2px solid #00ffcc;
+    transition: background-color 0.3s ease, padding 0.3s ease, transform 0.3s ease;
 }
 
 .list-group-item:hover {
@@ -95,10 +79,11 @@ body::before {
     transform: scale(1.05);
 }
 
-
+/* Image Styling */
 .list-group-item img {
     max-width: 100%;
-    height: auto;
+    max-height: 300px; /* Limit height to prevent oversized images */
+    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
     box-shadow: 0 5px 15px rgba(0, 255, 204, 0.5);
@@ -109,14 +94,14 @@ body::before {
     transform: scale(1.05);
 }
 
-
+/* Fish Details */
 .fish-details p {
     margin: 5px 0;
     color: #80deea;
     font-size: 16px;
 }
 
-
+/* Button Styling */
 button {
     background-color: #00ffcc;
     color: #1e1e2f;
@@ -135,7 +120,7 @@ button:hover {
     transform: scale(1.1);
 }
 
-
+/* Form Control */
 .form-control {
     margin-bottom: 20px;
     padding: 12px;
@@ -153,88 +138,14 @@ button:hover {
     background-color: #2e2e4f;
 }
 
-
+/* Modal */
 .modal-content {
     border-radius: 20px;
     background: #2e2e4f;
     box-shadow: 0 10px 30px rgba(0, 255, 204, 0.8);
 }
 
-.modal-header, .modal-footer {
-    background: #2e2e4f;
-    color: white;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    font-family: 'Press Start 2P', cursive;
-}
-
-.modal-body {
-    background: #1e1e2f;
-    font-size: 16px;
-}
-
-.modal-title {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 24px;
-    color: #00ffcc;
-}
-
-
-.alert {
-    background-color: #ffcdd2;
-    color: #b71c1c;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-
-button[type="submit"] {
-    display: block;
-    width: 100%;
-    margin: 20px auto;
-    padding: 12px;
-    font-size: 18px;
-    border-radius: 50px;
-    background-color: #00ffcc;
-    color: #1e1e2f;
-    border: none;
-    cursor: pointer;
-    font-family: 'Press Start 2P', cursive;
-}
-
-button[type="submit"]:hover {
-    background-color: #00ffaa;
-    transform: scale(1.05);
-}
-
-
-.github-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 16px;
-    text-transform: uppercase;
-    z-index: 1000;
-}
-
-.github-button:hover {
-    background-color: #444;
-    transform: scale(1.05);
-}
-
-
+/* Mobile Styles */
 @media (max-width: 768px) {
     .fishing-log h1 {
         font-size: 32px;
@@ -246,20 +157,14 @@ button[type="submit"]:hover {
     }
 
     .list-group-item {
-        font-size: 16px;
-    }
-
-    button[type="submit"] {
-        width: 100%;
-    }
-
-    .form-control {
         font-size: 14px;
         padding: 10px;
     }
 
-    .modal-title {
-        font-size: 20px;
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
     }
 }
 
@@ -270,7 +175,7 @@ button[type="submit"]:hover {
 
     button {
         padding: 8px 16px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .form-control {
@@ -285,11 +190,4 @@ button[type="submit"]:hover {
     .modal-title {
         font-size: 18px;
     }
-}
-
-.fishing-log {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
