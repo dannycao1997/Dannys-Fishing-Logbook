@@ -250,15 +250,83 @@ button[type="submit"]:hover {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .fishing-log h1 {
-        font-size: 48px;
+        font-size: 36px; /* Reduce heading size */
+    }
+
+    .fishing-log {
+        margin: 20px 10px; /* Reduce margins on smaller screens */
+        padding: 20px;
+    }
+
+    .list-group-item {
+        font-size: 18px; /* Adjust font size for better readability */
+        padding: 15px 0;
+    }
+
+    .list-group-item img {
+        width: 100%; /* Make images take full width */
+        height: auto;
     }
 
     button[type="submit"] {
-        width: 70%;
+        width: 100%; /* Full-width buttons on mobile */
+        padding: 10px 20px;
+    }
+
+    button {
+        padding: 10px 20px; /* Smaller padding for buttons on mobile */
+        font-size: 18px;
     }
 
     .form-control {
         font-size: 16px;
         padding: 10px;
     }
+
+    .modal-title {
+        font-size: 24px;
+    }
+
+    .github-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    /* Adjust list items for better mobile alignment */
+    .list-group {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .fishing-log h1 {
+        font-size: 32px;
+    }
+
+    button[type="submit"] {
+        padding: 8px 16px;
+    }
+
+    .form-control {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .list-group-item {
+        font-size: 16px;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+}
+
+.fishing-log {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
