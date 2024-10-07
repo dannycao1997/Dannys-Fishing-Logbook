@@ -23,6 +23,6 @@ With this app, I can easily:
 
 <img src="https://github.com/dannycao1997/Dannys-Fishing-Logbook/blob/52a9ca12538384f92854c6fccc3ebbd346a41e31/Danny%20Cao's%20Video%20-%20Oct%203%2C%202024.gif" />
 
-### 🌐 Live App https://backend-fishing-255289de45ad.herokuapp.com/
+### 🌐 Live Demo https://fishermandan.tech/
 
 
